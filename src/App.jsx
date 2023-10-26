@@ -19,10 +19,15 @@ function App() {
     setGameStage(stages[1].name)
   }
 
+  const mistake = () => {
+    setGameStage(stages[0].name)
+  }
+
   return (
     <div className="App">
-      {gameStage === 'start' && <Start tries={tries} startGame={startGame}/>}
-      {gameStage === 'part1' && <First1/>}
+      {gameStage === 'start' ? <Start tries={tries} startGame={startGame}/> : null}
+      {gameStage === 'part1' ? <First1 pergunta="Nome da denise?" resp1="nery" resp2="silva" resp3="string" resp4="martins"/> : null}
+      {gameStage === 'part2' ? <First1 pergunta="Penis?" resp1="sim" resp2="s33333im" resp3="s17im" resp4="s22im"/> : null}
     </div>
   )
 }
