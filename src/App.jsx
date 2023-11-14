@@ -3,14 +3,15 @@ import { useState } from 'react'
 import './App.css'
 import Start from './components/Start'
 import First1 from './components/First1'
+import ChoosePath from './components/ChoosePath'
 
 function App() {
 
   const stages = [
     {id:1, name:'start'},
-    {id:2, name:'part1', pergunta:'nome da denise?',resp1:'nery', resp2:'silva', resp3:'string', resp4:'martins'},
-    {id:3, name:'part2',  pergunta:'lucas?',resp1:'ss', resp2:'nn', resp3:'talvez', resp4:'sipa'},
-    {id:4, name:'part3',  pergunta:'aiai?',resp1:'iiii', resp2:'taa', resp3:'sss', resp4:'papa'}
+    {class:'endereçamento', name:'part1', pergunta:'nome da denise?',resp1:'nery', resp2:'silva', resp3:'string', resp4:'martins'},
+    {class:'endereçamento', name:'part2',  pergunta:'lucas?',resp1:'ss', resp2:'nn', resp3:'talvez', resp4:'sipa'},
+    {class:'endereçamento', name:'part3',  pergunta:'aiai?',resp1:'iiii', resp2:'taa', resp3:'sss', resp4:'papa'}
   ]
 
   const [tries,setTries] = useState(0)
@@ -21,6 +22,11 @@ function App() {
   const [resp3,setResp3] = useState()
   const [resp4,setResp4] = useState()
   const [n,setN] = useState(0)
+
+
+  const pathEndereco = () =>{
+    setGameStage(2)
+  }
 
   const passFase = () => {
     setGameStage(n + 1)
@@ -41,7 +47,8 @@ function App() {
 
   return (
     <div className="App">
-      {gameStage === 0 ? <Start tries={tries} startGame={passFase}/> : <First1 pergunta={pergunta} resp1={resp1} resp2={resp2} resp3={resp3} resp4={resp4} startGame={passFase} mistake={mistake}/>}     
+      {gameStage === 0 && <Start tries={tries} startGame={passFase}/>}
+      {gameStage === 1 && <ChoosePath></ChoosePath>}     
     </div>
   )
 }
