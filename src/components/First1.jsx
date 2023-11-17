@@ -1,13 +1,13 @@
 import React from 'react'
 import './First1.css'
-function First1({pergunta,resp1,resp2,resp3,resp4,startGame,mistake}) {
+function First1({pergunta,resp1,resp2,resp3,resp4,passFase,mistake}) {
   return (
     <div className="First1">
 
     <h1>{pergunta}</h1>
 
     <div id="row1" className='row'>
-    <div className="box" onClick={startGame}>{resp1}</div>
+    <div className="box" onClick={passFase}>{resp1}</div>
     <div className="box" onClick={mistake}>{resp2}</div>
     </div>
     

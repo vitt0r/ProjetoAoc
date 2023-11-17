@@ -1,12 +1,12 @@
 import React from 'react'
 import './ChoosePath.css'
-function ChoosePath() {
+function ChoosePath({pathEndereco,pathP,pathH}) {
   return (
    <div className='ChoosePath'>
     <div className='card'> 
-    <button>Endereçamento</button>
-    <button>Pipeline</button>
-    <button>Hierarquia de memória</button>
+    <button onClick={pathEndereco}>Endereçamento</button>
+    <button onClick={pathP}>Pipeline</button>
+    <button onClick={pathH}>Hierarquia de memória</button>
     </div>
    </div>
   )
