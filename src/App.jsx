@@ -6,6 +6,7 @@ import ChoosePath from './components/ChoosePath';
 import Error from './components/Error';
 
 function App() {
+  //perguntas e respostas
   const data = [
     {pergunta:'Endereçamento?', resp1:'resp1',resp2:'resp2', resp3:'resp3', respcorreta:'certa'},
     {text:'voce errou por isso isso isso1'},
@@ -25,9 +26,11 @@ function App() {
   const [resp3, setResp3] = useState('');
   const [resp4, setResp4] = useState('');
   const [error, setError] = useState('errou');
+  const [fase,setFase]  = useState(0);
 
   useEffect(() => {
     if (gameStage >= 0) {
+      //seta a pergunta e a resposta das fases
       setPergunta(data[gameStage].pergunta);
       setResp1(data[gameStage].resp1);
       setResp2(data[gameStage].resp2);
@@ -38,6 +41,7 @@ function App() {
 
   useEffect(() => {
     if (gameStage % 4 !== 0 && gameStage > 0) {
+      //cai na mensagem de erro
       setError(data[gameStage].text);
     }
   }, [gameStage, data]);
@@ -58,6 +62,7 @@ function App() {
   };
 
   const passFase = () => {
+    setFase((prevFase) => prevFase + 1);
     setGameStage((prevGameStage) => prevGameStage + 4);
   };
 
@@ -94,7 +99,7 @@ function App() {
       )}
       {gameStage % 4 === 0 && (
         <First1
-        gameStage={gameStage}
+        gameStage={fase}
           pergunta={pergunta}
           resp1={resp1}
           resp2={resp2}

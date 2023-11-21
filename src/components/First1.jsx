@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './First1.css';
 
+//função para embaralhar as divs
 function shuffleArray(array) {
   const shuffledArray = array.slice();
   for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -13,12 +14,13 @@ function shuffleArray(array) {
 function First1({ gameStage, pergunta, resp1, resp2, resp3, resp4, passFase, error1, error2, error3 }) {
   const shuffledOptions = shuffleArray([resp1, resp2, resp3, resp4]);
 
+  //verificar qual correta e qual o erro
   const handleButtonClick = (selectedOption) => {
     if (selectedOption === resp4) {
       // Resposta correta
       passFase();
     } else {
-      // Resposta errada
+      // Respostas erradas
       if (selectedOption === resp1) {
         error1();
       } else if (selectedOption === resp2) {
