@@ -1,11 +1,11 @@
 import React from 'react'
 import './Start.css'
 
-function Start({tries, startGame}) {
+function Start({tries, pathing}) {
   return (
     <div className="Start">
     <h1> AOC QUIZZ </h1>
-      <button onClick={startGame}>Start Game</button>
+      <button onClick={pathing}>Start Game</button>
       <p> Quantidades de tentativas: {tries}</p>
       </div>
   )
