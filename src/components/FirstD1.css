@@ -9,6 +9,9 @@ footer{
     color: green;
     display: inline-block;
 }
+#right{
+    cursor: pointer;
+}
 .box{
     display: flex;
     height: 10em;

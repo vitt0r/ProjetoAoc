@@ -51,6 +51,7 @@ function First1({ gameStage, pergunta, resp1, resp2, resp3, resp4, passFase, err
           </div>
         ))}
       </div>
+      <footer>UNIFESP</footer>
     </div>
   );
 }

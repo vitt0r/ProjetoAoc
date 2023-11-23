@@ -11,7 +11,7 @@ function App() {
     {pergunta:'Qual o modo de endereçamento requer apenas uma referência de memória para acessar o operando?', resp1:'Imediato',resp2:'Indireto', resp3:'Pilha e Registrador', respcorreta:'Direto'},
     {text:'Está errado, porque o imediato não acessa a memória'},
     {text:'Está errado, pois são necessários dois acessos a memória no indireto'},
-    {text:'Está errado, pois aqui se contem o endereço do registrador.'},
+    {text:'Está errado, pois aqui se contem o endereço do registrador'},
     {pergunta:'Pipeline?', resp1:'resp11',resp2:'resp22', resp3:'resp33', respcorreta:'carequinha'},
     {text:'voce errou por isso isso isso1'},
     {text:'voce errou por isso isso isso2'},
