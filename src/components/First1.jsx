@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+
 import './First1.css';
 
 //função para embaralhar as divs
