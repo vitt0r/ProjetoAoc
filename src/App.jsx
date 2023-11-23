@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Start from './components/Start';
 import First1 from './components/First1';
+import FirstD1 from './components/FirstD1';
 import ChoosePath from './components/ChoosePath';
 import Error from './components/Error';
 
@@ -9,6 +10,10 @@ function App() {
   //perguntas e respostas
   const data = [
     {pergunta:'Qual o modo de endereçamento requer apenas uma referência de memória para acessar o operando?', resp1:'Imediato',resp2:'Indireto', resp3:'Pilha e Registrador', respcorreta:'Direto'},
+    {text:'Está errado, porque o imediato não acessa a memória'},
+    {text:'Está errado, pois são necessários dois acessos a memória no indireto'},
+    {text:'Está errado, pois aqui se contem o endereço do registrador'},
+    {pergunta:'A operação lw é qual tipo de operação?', resp1:'R',resp2:'K', resp3:'J', respcorreta:'T'},
     {text:'Está errado, porque o imediato não acessa a memória'},
     {text:'Está errado, pois são necessários dois acessos a memória no indireto'},
     {text:'Está errado, pois aqui se contem o endereço do registrador'},
@@ -53,12 +58,12 @@ function App() {
 
   const pathPipe = () => {
     console.log(gameStage);
-    setGameStage(4);
+    setGameStage(8);
   };
 
   const pathHierarquia = () => {
     console.log(gameStage);
-    setGameStage(8);
+    setGameStage(12);
   };
 
   const passFase = () => {
@@ -97,7 +102,7 @@ function App() {
           pathHierarquia={pathHierarquia}
         ></ChoosePath>
       )}
-      {gameStage % 4 === 0 && (
+      {gameStage % 4 === 0 && gameStage !== 4 &&  (
         <First1
         gameStage={fase}
           pergunta={pergunta}
@@ -111,6 +116,17 @@ function App() {
           error3={error3}
         ></First1>
       )}
+      {gameStage === 4 && <FirstD1  
+      gameStage={fase}
+      pergunta={pergunta}
+      resp1={resp1}
+      resp2={resp2}
+      resp3={resp3}
+      resp4={resp4}
+      passFase={passFase}
+      error1={error1}
+      error2={error2}
+      error3={error3}></FirstD1>}
       {gameStage % 4 !== 0 && gameStage > 0 && (
         <Error text={error} reboot={reboot}>
           {' '}

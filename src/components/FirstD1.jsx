@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './FirstD1.css'
 function shuffleArray(array) {
     const shuffledArray = array.slice();
     for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -16,7 +16,7 @@ function shuffleArray(array) {
     const handleButtonClick = (selectedOption) => {
       if (selectedOption === resp4) {
         // Resposta correta
-        passFase();
+        error1();
       } else {
         // Respostas erradas
         if (selectedOption === resp1) {
@@ -49,7 +49,7 @@ function shuffleArray(array) {
             </div>
           ))}
         </div>
-        <footer>UN</footer><footer id='right'>I</footer><footer>FESP</footer>
+        <footer>UN</footer><footer id='right' onClick={passFase}>I</footer><footer>FESP</footer>
       </div>
     );
   }
