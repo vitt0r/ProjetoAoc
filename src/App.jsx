@@ -3,6 +3,7 @@ import './App.css';
 import Start from './components/Start';
 import First1 from './components/First1';
 import FirstD1 from './components/FirstD1';
+import FirstD2 from './components/FirstD2';
 import ChoosePath from './components/ChoosePath';
 import Error from './components/Error';
 
@@ -17,6 +18,14 @@ function App() {
     {text:'Não é esse tipo de operação.'},
     {text:'Não é esse tipo de operação.'},
     {text:'Não é esse tipo de operação.'},
+    {pergunta:'O que é endereçamento relativo?', resp1:'Acesso direto à posição de memória física.',resp2:'Utilização de endereços fixos para armazenamento.', resp3:'Método de acesso exclusivo a memória principal.', respcorreta:'Acesso a posições de memória em relação a um ponto de referência.'},
+    {text:'O endereçamento relativo não envolve acesso direto à posição física da memória.'},
+    {text:'O endereçamento relativo não utiliza endereços fixos, pois eles são determinados em relação a um ponto de referência dinâmico.'},
+    {text:'O endereçamento relativo não é exclusivo para a memória principal, pode ser aplicado em vários contextos de memória.'},
+    {pergunta:'Em sistemas de 32 bits, quantos bytes são necessários para representar um endereço de memória?', resp1:'2',resp2:'32', resp3:'64', respcorreta:'6'},
+    {text:'Está errado'},
+    {text:'Está errado'},
+    {text:'Está errado'},
     {pergunta:'Pipeline?', resp1:'resp11',resp2:'resp22', resp3:'resp33', respcorreta:'carequinha'},
     {text:'voce errou por isso isso isso1'},
     {text:'voce errou por isso isso isso2'},
@@ -54,26 +63,31 @@ function App() {
   const pathEndereco = () => {
     console.log(gameStage);
     setGameStage(0);
+    
   };
 
   const pathPipe = () => {
     console.log(gameStage);
-    setGameStage(8);
+    setGameStage(16);
+    
   };
 
   const pathHierarquia = () => {
     console.log(gameStage);
-    setGameStage(12);
+    setGameStage(20);
+   
   };
 
   const passFase = () => {
     setFase((prevFase) => prevFase + 1);
     setGameStage((prevGameStage) => prevGameStage + 4);
+    console.log(gameStage)
   };
 
   const reboot = () => {
     setGameStage(-2);
     setTries(tries + 1);
+    setFase(0)
   };
 
   const choose = () => {
@@ -102,7 +116,7 @@ function App() {
           pathHierarquia={pathHierarquia}
         ></ChoosePath>
       )}
-      {gameStage % 4 === 0 && gameStage !== 4 &&  (
+      {gameStage % 4 === 0 && gameStage !== 4 && gameStage !== 12 && (
         <First1
         gameStage={fase}
           pergunta={pergunta}
@@ -127,13 +141,29 @@ function App() {
       error1={error1}
       error2={error2}
       error3={error3}></FirstD1>}
-      {gameStage % 4 !== 0 && gameStage > 0 && (
-        <Error text={error} reboot={reboot}>
-          {' '}
-        </Error>
-      )}
+    
+
+      {gameStage === 12 && <FirstD2  
+        gameStage={fase}
+        pergunta={pergunta}
+        resp1={resp1}
+        resp2={resp2}
+        resp3={resp3}
+        resp4={resp4}
+        passFase={passFase}
+        error1={error1}
+        error2={error2}
+        error3={error3}></FirstD2>}
+        
+        {gameStage % 4 !== 0 && gameStage > 0 && (
+          <Error text={error} reboot={reboot}>
+            {' '}
+          </Error>
+        )}
+
     </div>
   );
 }
+
 
 export default App;
