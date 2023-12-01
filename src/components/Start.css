@@ -1,4 +1,38 @@
+/* Start.css */
+
+.Start {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 230px; /* Ajuste a largura da imagem conforme necessário */
+  height: auto; /* Isso manterá a proporção original da imagem */
+  margin-bottom: 50px; /* Ajuste a distância entre a imagem e o texto conforme necessário */
+}
+
 h1 {
-    font-size: 3em;
-    line-height: 1.1;
-  }
+  color: green !important; /* Cor do texto "AOC QUIZZ" */
+  font-size: 3em ;
+  line-height: 1.1;
+  height: 20%;
+}
+
+button {
+  background-color: rgb(26, 208, 26);
+  color: black;
+  padding: 10px;
+  font-size: 8em;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: beige;
+}
+
+p {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+}
