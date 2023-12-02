@@ -1,30 +1,45 @@
 /* Start.css */
 
-.Start {
-  text-align: center;
-  padding: 20px;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  width: 230px; /* Ajuste a largura da imagem conforme necessário */
-  height: auto; /* Isso manterá a proporção original da imagem */
-  margin-bottom: 50px; /* Ajuste a distância entre a imagem e o texto conforme necessário */
+.Start {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('../image/aoc_menor.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  text-align: center;
+  color: white;
 }
 
 h1 {
-  color: green !important; /* Cor do texto "AOC QUIZZ" */
-  font-size: 3em ;
+  color: rgb(14, 16, 14) !important;
+  font-size: 3em;
   line-height: 1.1;
-  height: 20%;
 }
 
 button {
   background-color: rgb(26, 208, 26);
   color: black;
+  font-weight: bold;
   padding: 10px;
-  font-size: 8em;
-  cursor: pointer;
   font-size: 20px;
+  cursor: pointer;
 }
 
 button:hover {
